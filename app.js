@@ -6,6 +6,8 @@ let isLoggedIn = false;
 let languageSelected = "";
 
 function setup() {
+    noCanvas(); // Prevents p5.js from creating a default canvas
+
     loginPage = document.getElementById('loginPage');
     languageSelectionPage = document.getElementById('languageSelectionPage');
     homeScreen = document.getElementById('homeScreen');
@@ -19,6 +21,7 @@ function setup() {
     document.getElementById('activity1').addEventListener('click', startActivity1);
     document.getElementById('backToHome').addEventListener('click', backToHome);
 }
+
 
 
 function checkLogin() {
@@ -41,15 +44,7 @@ function selectLanguage(event) {
 
     let activityButtons = document.querySelectorAll(".button-container button");
 
-    if (languageSelected === "English") {
-        activityButtons.forEach(btn => btn.style.backgroundColor = "white");
-        activityButtons.forEach(btn => btn.style.color = "black");
-    } 
-    else if (languageSelected === "Spanish") {
-        activityButtons.forEach(btn => btn.style.backgroundColor = "#ffcc00"); // Yellow (Spanish flag)
-        activityButtons.forEach(btn => btn.style.color = "black");
-    } 
-    else if (languageSelected === "Polish") {
+    if (languageSelected === "Polish") {
         activityButtons.forEach(btn => btn.style.backgroundColor = "#e0e0e0"); // Light Gray (Polish flag)
         activityButtons.forEach(btn => btn.style.color = "black");
     } 
