@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learning App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
+    <script src="https://q5js.org/q5.js"></script>
+    <script src="https://p5play.org/v3/planck.min.js"></script>
+    <script src="https://p5play.org/v3/p5play.js"></script>
+
+</head>
+<body>
+    <div id="loginPage">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button id="loginBtn">Login</button>
+    </div>
+
+    <div id="languageSelectionPage" style="display: none;">
+        <h2>Select Language</h2>
+        <button id="language1">
+            <img src="Polish flag.png" alt="Polish Flag" class="flag-icon"> Polish
+        </button>
+        <button id="language2">
+            <img src="Italian Flag.png" alt="Italian Flag" class="flag-icon"> Italian
+        </button>
+    </div>
+
+    <div id="homeScreen" style="display: none;">
+        <h2>Welcome!</h2>
+        <div class="button-container">
+            <button id="activity1">Activity 1</button>
+            <button id="activity2">Activity 2</button>
+            <button id="activity3">Activity 3</button>
+        </div>
+        <div class="bottom-buttons">
+            <button id="exitApp">Exit</button>
+            <button id="reselectLanguage">Reselect Language</button>
+        </div>
+    </div>
+    
+    
+
+    <div id="activityScreen" style="display: none;">
+        <h2>Activity 1: Word Repetition</h2>
+        <button id="recordBtn">Record</button>
+        <button id="playBtn">Play Recording</button>
+        <button id="backToHome">Back to Home</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
