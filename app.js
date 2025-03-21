@@ -59,7 +59,7 @@ function reselectLanguage() {
 
 function startActivity1() {
     homeScreen.style.display = "none";
-    activityScreen1.style.display = "block"; // Ensure Activity 1 screen is visible
+    activityScreen1.style.display = "block";
 
     const phrases = [
         "mineral water",
@@ -90,7 +90,6 @@ function startActivity1() {
     const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
     const translation = translations[randomPhrase][languageSelected];
 
-    // Dynamically add the desired HTML content
     activityScreen1.innerHTML = `
         <h2>Speak the English phrase</h2>
         <p>Translate the following phrase to English and speak it:</p>
@@ -103,7 +102,6 @@ function startActivity1() {
         <p>Score: <span id="score">${score}</span></p>
     `;
 
-    // Add event listeners for recording and playback
     document.getElementById('recordBtn').addEventListener('click', function () {
         mic.start();
         recorder.record(soundFile);
@@ -118,12 +116,10 @@ function startActivity1() {
         document.getElementById('feedback').textContent = "Playing your recording...";
         document.getElementById('feedback').style.color = "green";
 
-        // Increment score for completing the activity
         score++;
         document.getElementById('score').textContent = score;
     });
 
-    // Add Go Back button functionality
     document.getElementById('goBack').addEventListener('click', function () {
         activityScreen1.style.display = "none";
         homeScreen.style.display = "block";
@@ -132,8 +128,8 @@ function startActivity1() {
 
 function startActivity2() {
     homeScreen.style.display = "none";
-    activityScreen2.style.display = "block"; // Ensure Activity 2 screen is visible
-    document.getElementById('activity2Content').innerHTML = ""; // Clear previous content
+    activityScreen2.style.display = "block";
+    document.getElementById('activity2Content').innerHTML = ""; 
 
     const phrases = [
         "mineral water",
@@ -204,11 +200,10 @@ function startActivity2() {
             feedback.textContent = "Correct!";
             feedback.style.color = "green";
 
-            // Increment score for correct answer
             score++;
             document.getElementById('score').textContent = score;
 
-            setTimeout(startActivity2, 500); // Reset the activity after 2 seconds
+            setTimeout(startActivity2, 500);
         } else {
             alert("Incorrect. Try again.");
             feedback.textContent = `Incorrect. Try again.`;
@@ -237,8 +232,8 @@ function startActivity2() {
 
 function startActivity3() {
     homeScreen.style.display = "none";
-    activityScreen3.style.display = "block"; // Ensure Activity 3 screen is visible
-    document.getElementById('activity3Content').innerHTML = ""; // Clear previous content
+    activityScreen3.style.display = "block";
+    document.getElementById('activity3Content').innerHTML = ""; 
 
     const phrases = [
         "mineral water",
@@ -287,7 +282,6 @@ function startActivity3() {
 
         startTime = Date.now();
 
-        // Add event listeners to images
         document.querySelectorAll('#imageContainer img').forEach(img => {
             img.addEventListener('click', function () {
                 const selectedPhrase = img.getAttribute('data-phrase');
@@ -299,7 +293,7 @@ function startActivity3() {
                     feedback.style.color = "green";
                     score++;
                     document.getElementById('score').textContent = score;
-                    setTimeout(startNewRound, 500); // Start a new round after 2 seconds
+                    setTimeout(startNewRound, 500);
                 } else {
                     alert("Incorrect. Try again.");
                     feedback.textContent = "Incorrect. Try again!";
@@ -311,7 +305,6 @@ function startActivity3() {
 
     startNewRound();
 
-    // Add Go Back button functionality
     document.getElementById('backToHome3').addEventListener('click', function () {
         activityScreen3.style.display = "none";
         homeScreen.style.display = "block";
