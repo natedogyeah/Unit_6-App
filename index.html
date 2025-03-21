@@ -6,12 +6,10 @@
     <title>Language Learning App</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
-    <script src="https://q5js.org/q5.js"></script>
-    <script src="https://p5play.org/v3/planck.min.js"></script>
-    <script src="https://p5play.org/v3/p5play.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
 </head>
 <body>
+    <!-- Login Page -->
     <div id="loginPage">
         <h2>Login</h2>
         <input type="text" id="username" placeholder="Username">
@@ -19,6 +17,7 @@
         <button id="loginBtn">Login</button>
     </div>
 
+    <!-- Language Selection Page -->
     <div id="languageSelectionPage" style="display: none;">
         <h2>Select Language</h2>
         <button id="language1">
@@ -29,8 +28,9 @@
         </button>
     </div>
 
+    <!-- Home Screen -->
     <div id="homeScreen" style="display: none;">
-        <h2>Welcome!</h2>
+        <h2 id="welcomeText">Welcome!</h2>
         <div class="button-container">
             <button id="activity1">Activity 1</button>
             <button id="activity2">Activity 2</button>
@@ -42,13 +42,26 @@
         </div>
     </div>
     
-    
-
-    <div id="activityScreen" style="display: none;">
+    <!-- Activity 1 Screen -->
+    <div id="activityScreen1" style="display: none;">
         <h2>Activity 1: Word Repetition</h2>
         <button id="recordBtn">Record</button>
         <button id="playBtn">Play Recording</button>
-        <button id="backToHome">Back to Home</button>
+        <button id="backToHome1">Back to Home</button>
+    </div>
+
+    <!-- Activity 2 Screen -->
+    <div id="activityScreen2" style="display: none;">
+        <h2>Activity 2: Memory</h2>
+        <div id="activity2Content"></div>
+        <button id="backToHome2">Back to Home</button>
+    </div>
+
+    <!-- Activity 3 Screen -->
+    <div id="activityScreen3" style="display: none;">
+        <h2>Activity 3: Match the Word</h2>
+        <div id="activity3Content"></div>
+        <button id="backToHome3">Back to Home</button>
     </div>
 
     <script src="app.js"></script>
